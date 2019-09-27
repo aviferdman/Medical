@@ -1,0 +1,63 @@
+:host {
+  display: block;
+}
+
+:host.is-first {
+  border-top: 2px solid grey;
+  padding-top: 20px;
+}
+
+:host.is-last {
+  border-bottom: 2px solid grey;
+  padding-top: 20px;
+}
+
+:host.is-even {
+  background: lightgray;
+}
+
+:host.is-odd {
+  background: lightcyan;
+}
+
+:host-context(.salmon-theme) .group-card {
+  background: lightsalmon;
+}
+
+.group-card {
+  margin-bottom: 40px;
+  text-align: center;
+  border-radius: 1px;
+  padding: 20px 0;
+  box-shadow: 0 1px 16px 0 rgba(0, 0, 0, .2), 0 2px 8px 0 rgba(0, 0, 0, .14), 0 4px 8px -1px rgba(0, 0, 0, .12);
+  font-style: italic;
+  font-weight: bold;
+  font-size: medium;
+}
+
+.group-card .group-title {
+  font-size: 40px;
+  font-weight: bold;
+  font-style: italic;
+  letter-spacing: 2px;
+
+}
+
+.group-card .course-description {
+  max-width: 360px;
+  margin: 0 auto;
+  margin-top: 15px;
+  user-select: none;
+}
+
+.group-card .course-description input {
+  font-size: 20px;
+}
+
+.group-card.beginner {
+  background: lightsalmon;
+}
+.col {
+  flex: auto;
+}
+

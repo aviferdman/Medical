@@ -1,0 +1,36 @@
+<div>
+  <span>
+      Enter the patient's ID:
+  </span>
+  <form>
+
+  </form>
+</div>
+<form autocomplete="off" novalidate>
+  <fieldset>
+    <legend> Summary </legend>
+    <div class="form-field">
+      <label>Title:</label>
+      <input name="title" [(ngModel)]="title">
+    </div>
+    <div class="form-field">
+      <label>Durantion:</label>
+      <input name="durantion"[(ngModel)]= "durantion">
+    </div>
+    <div class="form-field">
+      <label>Level:</label>
+      <input type="radio" name="level" value="BEGINNER" [(ngModel)]="Slevel">Beginner
+      <input type="radio" name="level" value="ADVANCED" [(ngModel)]="Slevel">Advanced
+    </div>
+
+  </fieldset>
+
+  <p>
+    <button class="lesson-button" type="submit">Create Lesson</button>
+  </p>
+
+</form>
+<div class="debug">
+  <h3>Lesson Value:</h3>
+  {{this | json}}
+</div>
