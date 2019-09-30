@@ -21,6 +21,7 @@
         2
       </form>
       <form *ngSwitchCase="3">
+        <app-dropbox [listOfOptions]="question.Options"></app-dropbox>
         3
       </form>
       <form *ngSwitchCase="4">
@@ -30,8 +31,8 @@
     </div>
   </div>
   <div>
-    <h3>sections Value:</h3>
-    {{this.sections | json}}
+    <h3>Patient Value:</h3>
+    {{this.patient | json}}
   </div>
   <div>
     <h3>Question For Section Value:</h3>

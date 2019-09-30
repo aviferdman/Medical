@@ -106,7 +106,7 @@ export const QUESTIONS: any = [
   {
     Diagnosis: 'כאב גרון',
     Type: 3,
-    Options: {string: 'בחר מצב', string: 'נראה חולה', string: 'משביע רצון'},
+    Options: ['בחר מצב', 'נראה חולה', 'משביע רצון'],
     Section: 'ממצאים',
     Question: 'מצב כללי:'
   },

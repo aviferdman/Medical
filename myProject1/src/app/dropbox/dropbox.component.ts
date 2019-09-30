@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-dropbox',
@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dropbox.component.css']
 })
 export class DropboxComponent implements OnInit {
+  @Input()
+  listOfOptions: [];
+  chosenOption: string;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  clickOnOption(option: string) {
+    this.chosenOption = option;
+  }
 }

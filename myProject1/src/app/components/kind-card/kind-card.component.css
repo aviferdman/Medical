@@ -1,9 +1,9 @@
 .button{
-  color: #20bf6b !important;
+  color: GrayText !important;
   text-transform: uppercase;
-  background: #ffffff;
+  background: Menu;
   padding: 20px;
-  border: 4px solid #20bf6b !important;
+  border: 4px solid  !important;
   border-radius: 6px;
   display: inline-block;
   transition: all 0.3s ease 0s;
