@@ -20,6 +20,6 @@ export class KindCardComponent implements OnInit {
   }
 
   ClickOnDiagnosis() {
-    this.router.navigate(['/diagnosis'], {state: {data: {Patient: this.patient, string: this.name}}});
+    this.router.navigate(['/diagnosis'], {state: {queryParams: {Patient: this.patient, string: this.name}, queryParamsHandling: 'merge'}});
   }
 }

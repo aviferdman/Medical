@@ -1,10 +1,40 @@
 
-  <div class="group-card">
+  <legend class="group-card">
+    <div>
     ID: {{this.patient.ID}} First Name: {{this.patient.firstName}} Last Name: {{this.patient.lastName}} Age: {{this.patient.age}}
+    </div>
+    <div>
+      The Diagnosis is for: {{this.diagnosis}}
+    </div>
+  </legend>
+  <div *ngFor="let sec of this.sections;  let i = index">
+    <div>
+      {{sec}}
+    </div>
+    <div *ngFor="let question of this.quesForSec[i] " [ngSwitch]="question.Type">
+      <form *ngSwitchCase="1">
+        <app-checkbox [question]="question.Question"></app-checkbox>
+      1
+      </form>
+      <form *ngSwitchCase="2">
+        <app-short-text [question]="question.Question"></app-short-text>
+        2
+      </form>
+      <form *ngSwitchCase="3">
+        3
+      </form>
+      <form *ngSwitchCase="4">
+        <app-long-text [question]="question.Question"></app-long-text>
+        4
+      </form>
+    </div>
   </div>
-  <div class="group-card"> The Diagnosis is for: {{this.diagnosis}} </div>
-
-  <div class="debug">
-    {{this.patient | json}}
+  <div>
+    <h3>sections Value:</h3>
+    {{this.sections | json}}
+  </div>
+  <div>
+    <h3>Question For Section Value:</h3>
+    {{this.quesForSec | json}}
   </div>
 

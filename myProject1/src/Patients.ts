@@ -19,7 +19,6 @@ export const PATIENTS: any = [
     LastName: "Israeli",
     Age: 38,
   },
-
   {
     id: '111111114',
     FirstName: "Israel",

@@ -29,10 +29,10 @@ export class GroupCardComponent implements OnInit {
       this.kindOfComplaint = CHRONIC;
     }
     if (this.groupInput.type === 'מעבדה חריגה') {
-      this.kindOfComplaint = EXLAB; // not yet implemented
+      this.kindOfComplaint = EXLAB;
     }
     if (this.groupInput.type === 'אחר') {
-      this.kindOfComplaint = OTHER; // not yet implemented
+      this.kindOfComplaint = OTHER;
     }
   }
 

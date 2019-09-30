@@ -10,6 +10,10 @@ import { CatagoryComponent } from './components/catagory/catagory.component';
 import { GroupCardComponent } from './components/group-card/group-card.component';
 import { KindCardComponent } from './components/kind-card/kind-card.component';
 import { DiagnosisComponent } from './components/diagnosis/diagnosis.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
+import { ShortTextComponent } from './short-text/short-text.component';
+import { DropboxComponent } from './dropbox/dropbox.component';
+import { LongTextComponent } from './long-text/long-text.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import { DiagnosisComponent } from './components/diagnosis/diagnosis.component';
     CatagoryComponent,
     GroupCardComponent,
     KindCardComponent,
-    DiagnosisComponent
+    DiagnosisComponent,
+    CheckboxComponent,
+    ShortTextComponent,
+    DropboxComponent,
+    LongTextComponent
   ],
   imports: [
     BrowserModule,
