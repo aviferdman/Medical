@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Patient, QuestionAndAnswer} from '../../service1.service';
 import {any} from 'codelyzer/util/function';
 import {findQuesForSec, findSections, QUESTIONS} from '../../../Questions';
-import Swal from "sweetalert2";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-diagnosis',

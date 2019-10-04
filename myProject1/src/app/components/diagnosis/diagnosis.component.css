@@ -8,3 +8,19 @@
   font-weight: bold;
   font-size: medium;
 }
+.summary-button {
+  margin-right: 30%;
+  margin-left: 33%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  border-radius: 2px;
+  direction: rtl;
+}
+
+.diagnosis{
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  direction: rtl;
+}

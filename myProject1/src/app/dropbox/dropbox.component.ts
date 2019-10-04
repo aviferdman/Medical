@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {QuestionAndAnswer} from '../service1.service';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-dropbox',
@@ -15,7 +16,7 @@ export class DropboxComponent implements OnInit {
   selectEmiter: EventEmitter <QuestionAndAnswer> = new EventEmitter();
 
   qAndA: QuestionAndAnswer;
-  selectOption: string;
+  selectOption = '';
 
   constructor() { }
 
@@ -24,7 +25,7 @@ export class DropboxComponent implements OnInit {
   }
 
   clickOnOption() {
-    console.log(this.selectOption)
+    console.log(this.selectOption);
     this.qAndA.answer = this.selectOption;
     this.selectEmiter.emit(this.qAndA);
   }

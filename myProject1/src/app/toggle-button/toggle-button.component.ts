@@ -1,4 +1,5 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {QuestionAndAnswer} from '../service1.service';
 
 @Component({
   selector: 'app-toggle-button',
@@ -6,17 +7,27 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./toggle-button.component.css']
 })
 export class ToggleButtonComponent implements OnInit {
-  @Output() changedEmit = new EventEmitter<boolean>();
+  @Input()
+  question: string;
+  @Output()
+  changedEmit = new EventEmitter<QuestionAndAnswer>();
 
   isChanged = false;
+  qAndA: QuestionAndAnswer;
+
   constructor() { }
 
   ngOnInit() {
+    this.qAndA = new QuestionAndAnswer(this.question, '');
   }
 
   Changed() {
     this.isChanged = !this.isChanged;
-    this.changedEmit.emit(this.isChanged);
+    if (this.isChanged) {
+      this.qAndA.answer = 'כן';
+    } else {
+      this.qAndA.answer = 'ללא';
+    }
+    this.changedEmit.emit(this.qAndA);
   }
-
 }

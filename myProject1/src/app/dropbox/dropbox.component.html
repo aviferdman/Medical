@@ -1,3 +1,8 @@
-<select [(ngModel)]="selectOption" (change)="clickOnOption()">
-  <option *ngFor="let o of listOfOptions" [value]="o" >{{o}}</option>
-</select>
+<mat-form-field>
+  <mat-label>{{this.question}}</mat-label>
+  <mat-select [(ngModel)]="selectOption" (selectionChange)="clickOnOption()">
+    <mat-option *ngFor="let o of listOfOptions" [value]="o" >
+      {{o}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

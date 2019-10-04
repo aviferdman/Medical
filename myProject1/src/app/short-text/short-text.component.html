@@ -1,4 +1,4 @@
-<form>
-  <label> {{this.question}} </label>
-  <input type="text" (keyup)="enteredText($event)" >
-</form>
+
+<mat-form-field>
+  <input matInput (keyup)="enteredText($event)" placeholder={{this.question}}>
+</mat-form-field>

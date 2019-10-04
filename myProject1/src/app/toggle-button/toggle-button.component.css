@@ -1,8 +1,10 @@
 :host {
   display: block;
   position: relative;
-  width: 100px;
-  height: 50px;
+  width: 20%;
+  height: 50%;
+  margin-bottom: 5%;
+  margin-top: 5%;
 }
 
 input[type="checkbox"] {
@@ -13,21 +15,23 @@ input[type="checkbox"] {
   position: absolute;
   top: 2px;
   left: 2px;
-  width: 46px;
-  height: 46px;
-  background-color: #fff;
+  width: 50%;
+  height: 60%;
+  background-color: rgb(255, 255, 251);
   border-radius: 100%;
   cursor: pointer;
   z-index: 100;
-  transition: left 0.3s;
+  transition: left 0.25s;
+  margin-top: 11%;
+  margin-bottom: 10%;
 }
 
 
 .toggle-button-text {
   overflow: hidden;
-  background-color: #fc3164;
+  background-color: rgba(249, 36, 31, 0.68);
   border-radius: 25px;
-  box-shadow: 2px 2px 5px 0 rgba(50, 50, 50, 0.75);
+  box-shadow: 2px 2px 5px 0 rgb(0, 0, 0);
   transition: background-color 0.3s;
 }
 
@@ -36,7 +40,7 @@ input[type="checkbox"] {
   float: left;
   width: 50%;
   height: 100%;
-  line-height: 50px;
+  line-height: 300%;
   font-family: Lato, sans-serif;
   font-weight: bold;
   color: #fff;
@@ -44,9 +48,13 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked ~ .toggle-button-switch {
-  left: 52px;
+  left: 50%;
 }
 
 input[type="checkbox"]:checked ~ .toggle-button-text {
-  background-color: #3dbf87;
+  background-color: #398abf;
+}
+
+.spacing {
+  line-height: 100%;
 }

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { PatientsComponent } from './components/patients/patients.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FindPatientComponent } from './components/find-patient/find-patient.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CatagoryComponent } from './components/catagory/catagory.component';
@@ -19,9 +19,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import {MatCardModule, MatIconModule, MatTableModule, MatTabsModule, MatToolbarModule} from '@angular/material';
+import {MatCardModule, MatIconModule, MatSelectModule, MatTableModule, MatTabsModule, MatToolbarModule} from '@angular/material';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
+
 
 @NgModule({
   declarations: [
@@ -52,7 +53,9 @@ import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
     MatIconModule,
     MatTableModule,
     MatTabsModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatSelectModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

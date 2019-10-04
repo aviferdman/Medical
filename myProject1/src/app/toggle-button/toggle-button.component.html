@@ -1,8 +1,11 @@
-<input type="checkbox" id="toggle-button-checkbox"
-       (isTrue)="changedEmit.emit($event.target.checked)">
-<label class="toggle-button-switch"
-       for="toggle-button-checkbox"></label>
-<div class="toggle-button-text">
-  <div class="toggle-button-text-on">ON</div>
-  <div class="toggle-button-text-off">OFF</div>
-</div>
+<form>
+  <h4 class="spacing">
+    {{question}}
+  </h4>
+  <input type="checkbox" [id]="question" (ngModelChange)="Changed()" [(ngModel)]="isChanged" [ngModelOptions]="{standalone: true}">
+  <label class="toggle-button-switch" [for]="question"></label>
+  <div class="toggle-button-text">
+    <div class="toggle-button-text-on">כן</div>
+    <div class="toggle-button-text-off">לא</div>
+  </div>
+</form>

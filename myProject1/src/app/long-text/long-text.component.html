@@ -1,4 +1,4 @@
-<form>
-  <label> {{this.question}} </label>
-  <input type="text" (keyup)="enteredText($event)" [(ngModel)]="text" [ngModelOptions]="{standalone: true}">
-</form>
+
+<mat-form-field class="long-text">
+  <textarea type="text" matInput (keyup)="enteredText($event)" [(ngModel)]="text" [ngModelOptions]="{standalone: true}" placeholder={{this.question}}></textarea>
+</mat-form-field>
