@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {QuestionAndAnswer} from '../service1.service';
 
 @Component({
   selector: 'app-dropbox',
@@ -8,14 +9,23 @@ import {Component, Input, OnInit} from '@angular/core';
 export class DropboxComponent implements OnInit {
   @Input()
   listOfOptions: [];
-  chosenOption: string;
+  @Input()
+  question: string;
+  @Output()
+  selectEmiter: EventEmitter <QuestionAndAnswer> = new EventEmitter();
+
+  qAndA: QuestionAndAnswer;
+  selectOption: string;
 
   constructor() { }
 
   ngOnInit() {
+    this.qAndA = new QuestionAndAnswer(this.question, '');
   }
 
-  clickOnOption(option: string) {
-    this.chosenOption = option;
+  clickOnOption(event: any) {
+    console.log(this.selectOption)
+    this.qAndA.answer = this.selectOption;
+    this.selectEmiter.emit(this.qAndA);
   }
 }

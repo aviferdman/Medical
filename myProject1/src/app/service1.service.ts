@@ -17,6 +17,16 @@ export class Patient {
     this.age = newAge;
   }
 }
+export class QuestionAndAnswer {
+  question: string;
+  answer: string;
+
+  constructor(question: string, answer: string) {
+    this.question = question;
+    this.answer = answer;
+  }
+}
+
 export class Group {
   type: string;
 

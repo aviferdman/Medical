@@ -1,0 +1,15 @@
+<div class="example-container">
+<mat-form-field *ngFor="let question of questions"  >
+
+  <input  matInput type="checkbox" >
+  </mat-form-field>
+  
+
+
+  <mat-form-field *ngFor="let text of texts"  >
+
+    <input matInput placeholder="text">
+  </mat-form-field>
+</div>
+
+  <button mat-raised-button color="primary" (click)="onClick()" >Primary</button>

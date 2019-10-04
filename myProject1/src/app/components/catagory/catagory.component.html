@@ -1,7 +1,8 @@
 
-    <div class="group-card">
-       ID: {{this.patient.ID}} First Name: {{this.patient.firstName}} Last Name: {{this.patient.lastName}} Age: {{this.patient.age}}
-    </div>
-  <div class="table">
-    <app-group-card *ngFor="let group of groups" [groupInput]="group" [patient]="this.patient">  </app-group-card>
+<mat-toolbar color="primary">
+  ID: {{this.patient.ID}} First Name: {{this.patient.firstName}} Last Name: {{this.patient.lastName}} Age: {{this.patient.age}}
+</mat-toolbar>
+  <div class="tab">
+    <app-group-card class="col" *ngFor="let group of groups" [groupInput]="group" [patient]="this.patient">  </app-group-card>
   </div>
+

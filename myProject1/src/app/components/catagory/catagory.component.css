@@ -58,6 +58,10 @@
   background: lightsalmon;
 }
 .col {
-  flex: auto;
+  float: right;
+  width: 16%;
+  margin-left: 4%;
+  margin-right: 4%;
+  direction: rtl;
 }
 

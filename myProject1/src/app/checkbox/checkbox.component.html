@@ -1,4 +1,5 @@
 <form>
-  <label> {{this.question}} </label>
-<input type="checkbox" [(ngModel)]="isTrue">
+  <h4> {{this.question}} </h4>
+<input type="checkbox" (click)="onClicked()" [(ngModel)]="isTrue" [ngModelOptions]="{standalone: true}">
+  <p> {{isTrue}}</p>
 </form>

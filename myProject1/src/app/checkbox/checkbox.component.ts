@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Output, Input, OnInit, EventEmitter } from '@angular/core';
+import {QuestionAndAnswer} from '../service1.service';
 
 @Component({
   selector: 'app-checkbox',
@@ -8,12 +9,34 @@ import {Component, Input, OnInit} from '@angular/core';
 export class CheckboxComponent implements OnInit {
   @Input()
   question: string;
+  @Output() isTrueEmit: EventEmitter<QuestionAndAnswer> = new EventEmitter();
 
-  isTrue: boolean;
+  isTrue = false;
+  qAndA: QuestionAndAnswer;
 
   constructor() { }
 
   ngOnInit() {
+    this.qAndA = new QuestionAndAnswer(this.question, '');
   }
 
+  onClicked() {
+    this.isTrue = !this.isTrue;
+    if (this.isTrue) {
+      this.qAndA.answer = 'כן';
+    } else {
+      this.qAndA.answer = 'ללא';
+    }
+    this.isTrueEmit.emit(this.qAndA);
+  }
+
+  changeTheValue($event: boolean) {
+    this.isTrue = !this.isTrue;
+    if (this.isTrue) {
+      this.qAndA.answer = 'כן';
+    } else {
+      this.qAndA.answer = 'ללא';
+    }
+    this.isTrueEmit.emit(this.qAndA);
+  }
 }

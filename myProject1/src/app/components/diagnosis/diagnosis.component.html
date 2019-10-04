@@ -1,31 +1,29 @@
+<mat-toolbar color="primary">
+  ID: {{this.patient.ID}}     First Name: {{this.patient.firstName}}     Last Name: {{this.patient.lastName}}  Age: {{this.patient.age}}<br />
+    The Diagnosis is for: {{this.diagnosis}}
+</mat-toolbar>
 
-  <legend class="group-card">
-    <div>
-    ID: {{this.patient.ID}} First Name: {{this.patient.firstName}} Last Name: {{this.patient.lastName}} Age: {{this.patient.age}}
-    </div>
-    <div>
-      The Diagnosis is for: {{this.diagnosis}}
-    </div>
-  </legend>
   <div *ngFor="let sec of this.sections;  let i = index">
     <div>
+      <h3 *ngIf="sec !== 'התחלתי'">
       {{sec}}
+      </h3>
     </div>
     <div *ngFor="let question of this.quesForSec[i] " [ngSwitch]="question.Type">
-      <form *ngSwitchCase="1">
-        <app-checkbox [question]="question.Question"></app-checkbox>
+      <form *ngSwitchCase="1"   >
+        <app-checkbox  (isTrueEmit)='DoThisWhenInput($event)'  [question]="question.Question"></app-checkbox>
       1
       </form>
       <form *ngSwitchCase="2">
-        <app-short-text [question]="question.Question"></app-short-text>
+        <app-short-text (textEmiter)='DoThisWhenInput($event)' [question]="question.Question"></app-short-text>
         2
       </form>
       <form *ngSwitchCase="3">
-        <app-dropbox [listOfOptions]="question.Options"></app-dropbox>
+        <app-dropbox (selectEmiter)='DoThisWhenInput($event)' [listOfOptions]="question.Options" [question]="question.Question"></app-dropbox>
         3
       </form>
       <form *ngSwitchCase="4">
-        <app-long-text [question]="question.Question"></app-long-text>
+        <app-long-text (textEmiter)='DoThisWhenInput($event)' [question]="question.Question"></app-long-text>
         4
       </form>
     </div>
@@ -38,4 +36,8 @@
     <h3>Question For Section Value:</h3>
     {{this.quesForSec | json}}
   </div>
+<div>
+  <h3>Question and Answers Value:</h3>
+  {{this.allQuestionsAndAnswers | json}}
+</div>
 

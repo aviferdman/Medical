@@ -1,4 +1,4 @@
 <form>
   <label> {{this.question}} </label>
-  <input type="text" [(ngModel)]="text">
+  <input type="text" (keyup)="enteredText($event)" [(ngModel)]="text" [ngModelOptions]="{standalone: true}">
 </form>

@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Group, Patient} from '../../service1.service';
 import {GROUPS} from '../../../Group';
 import {any} from 'codelyzer/util/function';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-catagory',

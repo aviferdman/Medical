@@ -1,3 +1,5 @@
-<select>
-  <option *ngFor="let o of listOfOptions" value=o (click)="clickOnOption(o)">{{o}}</option>
+<select [(ngModel)]="selectOption">
+  <option *ngFor="let o of listOfOptions" value="o" (change)="clickOnOption($event)">{{o}}</option>
 </select>
+
+

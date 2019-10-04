@@ -1,17 +1,13 @@
-<div>
-  <span>
-      Find Patient
-  </span>
-</div>
-<form autocomplete="off" novalidate>
+<form class="center-div" autocomplete="off" novalidate>
   <fieldset>
-    <legend> Type patient's ID </legend>
-    <div class="form-field">
-      <input name="ID" [(ngModel)]="ID" placeholder="Enter The ID">
+    <div>
+      <mat-form-field>
+        <input type="text" matInput name="ID" [(ngModel)]="ID" placeholder="Enter The ID" [ngModelOptions]="{standalone: true}" />
+      </mat-form-field>
     </div>
   </fieldset>
   <p>
-    <button class="search-button" type="submit" (click)="FindPatientByID()">Serach Patient</button>
+    <button class="center-button" mat-raised-button color="primary" type="submit" (click)="FindPatientByID()">Search Patient</button>
   </p>
 </form>
 
@@ -19,4 +15,3 @@
   <h3>Patient Value:</h3>
   {{this.patient | json}}
 </div>
-

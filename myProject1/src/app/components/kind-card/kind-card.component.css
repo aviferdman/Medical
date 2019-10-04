@@ -12,3 +12,24 @@
   font-weight: initial;
   height: 100px;
 }
+.tab{
+  margin-bottom: 12%;
+  float: bottom;
+  width: 100%;
+  height: 5%;
+  direction: rtl;
+  outline: black;
+
+}
+.float-down {
+  float: bottom;
+  width: auto;
+  direction: rtl;
+}
+.center-header {
+  alignment: center;
+  horiz-align: center;
+  text-align: center;
+  background: lightsalmon;
+  direction: rtl;
+}

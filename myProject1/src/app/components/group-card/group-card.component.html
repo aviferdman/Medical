@@ -1,9 +1,6 @@
-<div class="group-card">
 
-  <div class="group-title">
-    {{ groupInput.type }}
-  </div>
-  <div>
+
+<div>
+  <h1 class="center-header"> {{ groupInput.type }} </h1>
       <app-kind-card *ngFor="let kind of kindOfComplaint" [name]="kind.type" [patient]="this.patient"></app-kind-card>
-  </div>
 </div>

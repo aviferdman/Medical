@@ -11,16 +11,16 @@
     <legend> Summary </legend>
     <div class="form-field">
       <label>Title:</label>
-      <input name="title" [(ngModel)]="title">
+      <input name="title" [(ngModel)]="title" [ngModelOptions]="{standalone: true}">
     </div>
     <div class="form-field">
       <label>Durantion:</label>
-      <input name="durantion"[(ngModel)]= "durantion">
+      <input name="durantion"[(ngModel)]= "durantion"  [ngModelOptions]="{standalone: true}" >
     </div>
     <div class="form-field">
       <label>Level:</label>
-      <input type="radio" name="level" value="BEGINNER" [(ngModel)]="Slevel">Beginner
-      <input type="radio" name="level" value="ADVANCED" [(ngModel)]="Slevel">Advanced
+      <input type="radio" name="level" value="BEGINNER" [(ngModel)]="Slevel" [ngModelOptions]="{standalone: true}">Beginner
+      <input type="radio" name="level" value="ADVANCED" [(ngModel)]="Slevel" [ngModelOptions]="{standalone: true}">Advanced
     </div>
 
   </fieldset>

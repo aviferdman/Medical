@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Patient} from '../../service1.service';
+import {Patient, QuestionAndAnswer} from '../../service1.service';
 import {any} from 'codelyzer/util/function';
 import {findQuesForSec, findSections, QUESTIONS} from '../../../Questions';
 
@@ -13,8 +13,22 @@ export class DiagnosisComponent implements OnInit {
   diagnosis = '';
   sections = [];
   quesForSec = [];
+  allQuestionsAndAnswers = [];
 
-  constructor() { }
+
+  constructor() {
+  }
+
+
+  DoThisWhenInput(input: QuestionAndAnswer) {
+    this.allQuestionsAndAnswers.map(qAndA => { if (qAndA.question === input.question) {
+      qAndA.answer = input.answer; }
+    });
+  }
+
+  textInputTest(input: string) {
+    console.log(`From diagnosis :${input}`);
+  }
 
   ngOnInit() {
     this.patient = history.state.queryParams.Patient;
@@ -24,6 +38,11 @@ export class DiagnosisComponent implements OnInit {
       this.sections.map(sec => this.quesForSec.push(findQuesForSec(this.diagnosis, sec)));
     } catch (e) {
       console.log('couldnt load quesForSec' + e.toString());
+    }
+    try {
+      this.quesForSec.map(sec => sec.map(q => this.allQuestionsAndAnswers.push(new QuestionAndAnswer(q.Question, ''))));
+    } catch (e) {
+      console.log('couldnt load all questions' + e.toString());
     }
   }
 }

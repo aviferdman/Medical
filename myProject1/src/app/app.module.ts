@@ -14,6 +14,14 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
 import { ShortTextComponent } from './short-text/short-text.component';
 import { DropboxComponent } from './dropbox/dropbox.component';
 import { LongTextComponent } from './long-text/long-text.component';
+import { DiagnosisFormComponent } from './components/diagnosis-form/diagnosis-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatCardModule, MatIconModule, MatTableModule, MatTabsModule, MatToolbarModule} from '@angular/material';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +35,24 @@ import { LongTextComponent } from './long-text/long-text.component';
     CheckboxComponent,
     ShortTextComponent,
     DropboxComponent,
-    LongTextComponent
+    LongTextComponent,
+    DiagnosisFormComponent,
+    ToggleButtonComponent,
   ],
   imports: [
     BrowserModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatIconModule,
+    MatTableModule,
+    MatTabsModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

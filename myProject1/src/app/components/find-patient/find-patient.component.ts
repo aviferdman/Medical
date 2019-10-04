@@ -3,6 +3,7 @@ import {findPatientById, PATIENTS} from '../../../Patients';
 import {PatientsComponent} from '../patients/patients.component';
 import {Router} from '@angular/router';
 import {Patient, Service1Service} from '../../service1.service';
+import Swal from 'sweetalert2';
 
 
 
