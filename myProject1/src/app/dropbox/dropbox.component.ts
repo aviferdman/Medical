@@ -23,7 +23,7 @@ export class DropboxComponent implements OnInit {
     this.qAndA = new QuestionAndAnswer(this.question, '');
   }
 
-  clickOnOption(event: any) {
+  clickOnOption() {
     console.log(this.selectOption)
     this.qAndA.answer = this.selectOption;
     this.selectEmiter.emit(this.qAndA);

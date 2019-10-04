@@ -32,4 +32,7 @@ export class DiagnosisFormComponent implements OnInit {
   }
 
 
+  showSummary() {
+
+  }
 }

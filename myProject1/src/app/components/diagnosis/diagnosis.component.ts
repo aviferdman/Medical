@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Patient, QuestionAndAnswer} from '../../service1.service';
 import {any} from 'codelyzer/util/function';
 import {findQuesForSec, findSections, QUESTIONS} from '../../../Questions';
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-diagnosis',
@@ -44,5 +45,14 @@ export class DiagnosisComponent implements OnInit {
     } catch (e) {
       console.log('couldnt load all questions' + e.toString());
     }
+  }
+
+  showSummary() {
+    Swal.fire({
+      title: 'Summary information:',
+      html: this.allQuestionsAndAnswers.map(qAndA => `<p>${qAndA.question} ${qAndA.answer}</p>`).join(''),
+      showCancelButton: true,
+      showConfirmButton: true
+    });
   }
 }
