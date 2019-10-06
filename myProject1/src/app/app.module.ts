@@ -19,7 +19,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import {MatCardModule, MatIconModule, MatSelectModule, MatTableModule, MatTabsModule, MatToolbarModule} from '@angular/material';
+import {
+  MatCardModule, MatDividerModule,
+  MatIconModule, MatListModule, MatMenuModule,
+  MatRadioModule,
+  MatSelectModule, MatSidenavModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule, MatTooltipModule
+} from '@angular/material';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
 
@@ -56,6 +64,12 @@ import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
     MatButtonToggleModule,
     MatSelectModule,
     ReactiveFormsModule,
+    MatRadioModule,
+    MatDividerModule,
+    MatMenuModule,
+    MatListModule,
+    MatTooltipModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

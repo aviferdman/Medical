@@ -3,6 +3,7 @@ import {Group, Patient} from '../../service1.service';
 import {GROUPS} from '../../../Group';
 import {any} from 'codelyzer/util/function';
 import Swal from 'sweetalert2';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-catagory',
@@ -14,10 +15,14 @@ export class CatagoryComponent implements OnInit {
   patient = new Patient('', '', '', 0);
   groups = {};
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     this.patient = history.state.data;
     this.groups = GROUPS;
+  }
+
+  backPage() {
+    this.router.navigate(['/home']);
   }
 }

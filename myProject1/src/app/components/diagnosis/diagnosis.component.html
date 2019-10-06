@@ -25,5 +25,14 @@
       </form>
     </div>
   </div>
-<button class="summary-button" mat-raised-button color="primary" type="submit" (click)="showSummary()">Show Summary</button>
+<button class="summary-button" mat-raised-button color="primary" type="submit" (click)="showSummary()" matTooltip="הצג סיכום"
+        matTooltipPosition="before">הצג סיכום</button>
+  <button class="summary-button" mat-raised-button color="primary" type="submit"  matTooltip="צור מרשם"
+          matTooltipPosition="before">צור מרשם</button>
+  <button (click)="backPage()" mat-icon-button class="summary-button" mat-raised-button color="primary" type="submit" matTooltip="חזור לעמוד הקודם"
+          matTooltipPosition="before"> <i class="material-icons">
+    navigate_before
+  </i> </button>
+
+
 

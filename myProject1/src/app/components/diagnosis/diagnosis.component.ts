@@ -3,6 +3,7 @@ import {Patient, QuestionAndAnswer} from '../../service1.service';
 import {any} from 'codelyzer/util/function';
 import {findQuesForSec, findSections, QUESTIONS} from '../../../Questions';
 import Swal from 'sweetalert2';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-diagnosis',
@@ -17,7 +18,7 @@ export class DiagnosisComponent implements OnInit {
   allQuestionsAndAnswers = [];
 
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
 
@@ -54,5 +55,9 @@ export class DiagnosisComponent implements OnInit {
       showCancelButton: true,
       showConfirmButton: true
     });
+  }
+
+  backPage() {
+    this.router.navigate(['/catagory'], {state: {data: this.patient}});
   }
 }
