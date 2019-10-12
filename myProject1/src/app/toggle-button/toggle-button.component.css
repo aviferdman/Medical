@@ -58,3 +58,10 @@ input[type="checkbox"]:checked ~ .toggle-button-text {
 .spacing {
   line-height: 100%;
 }
+.diagnosis {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  direction: rtl;
+}

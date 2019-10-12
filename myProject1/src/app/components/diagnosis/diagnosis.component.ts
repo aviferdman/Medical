@@ -11,53 +11,35 @@ import {Router} from '@angular/router';
   styleUrls: ['./diagnosis.component.css']
 })
 export class DiagnosisComponent implements OnInit {
-  patient = new Patient('', '', '', 0);
-  diagnosis = '';
+  patient = history.state.queryParams.Patient;
+  diagnosis = history.state.queryParams.string;
+
   sections = [];
   quesForSec = [];
-  allQuestionsAndAnswers = [];
+  allQuestionsAndAnswers = [[]];
 
 
   constructor(private router: Router) {
   }
 
 
-  DoThisWhenInput(input: QuestionAndAnswer) {
-    this.allQuestionsAndAnswers.map(qAndA => { if (qAndA.question === input.question) {
-      qAndA.answer = input.answer; }
-    });
-  }
-
-  textInputTest(input: string) {
-    console.log(`From diagnosis :${input}`);
+  DoThisWhenInput(input: [], i: number) {
+    this.allQuestionsAndAnswers[i] = input;
   }
 
   ngOnInit() {
-    this.patient = history.state.queryParams.Patient;
-    this.diagnosis = history.state.queryParams.string;
+
     this.sections = findSections(this.diagnosis);
     try {
       this.sections.map(sec => this.quesForSec.push(findQuesForSec(this.diagnosis, sec)));
     } catch (e) {
       console.log('couldnt load quesForSec' + e.toString());
-    }
+    }/*
     try {
       this.quesForSec.map(sec => sec.map(q => this.allQuestionsAndAnswers.push(new QuestionAndAnswer(q.Question, ''))));
     } catch (e) {
       console.log('couldnt load all questions' + e.toString());
-    }
-  }
-
-  showSummary() {
-    Swal.fire({
-      title: 'Summary information:',
-      html: this.allQuestionsAndAnswers.map(qAndA => `<p>${qAndA.question} ${qAndA.answer}</p>`).join(''),
-      showCancelButton: true,
-      showConfirmButton: true
-    });
-  }
-
-  backPage() {
-    this.router.navigate(['/catagory'], {state: {data: this.patient}});
+    }*/
+    this.allQuestionsAndAnswers = new Array(this.sections.length);
   }
 }

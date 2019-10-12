@@ -12,6 +12,8 @@ export class DropboxComponent implements OnInit {
   listOfOptions: [];
   @Input()
   question: string;
+  @Input()
+  tabs: number;
   @Output()
   selectEmiter: EventEmitter <QuestionAndAnswer> = new EventEmitter();
 

@@ -1,7 +1,4 @@
-<mat-toolbar color="primary">
-  ID: {{this.patient.ID}}     First Name: {{this.patient.firstName}}     Last Name: {{this.patient.lastName}}  Age: {{this.patient.age}}<br />
-    The Diagnosis is for: {{this.diagnosis}}
-</mat-toolbar>
+<app-bar [patient]="patient" [diagnosis]="diagnosis" [allQuestionsAndAnswers]="allQuestionsAndAnswers"></app-bar>
 
   <div class="diagnosis" *ngFor="let sec of this.sections;  let i = index">
     <div>
@@ -9,30 +6,25 @@
       {{sec}}
       </h3>
     </div>
-    <div *ngFor="let question of this.quesForSec[i] " [ngSwitch]="question.Type">
-      <form *ngSwitchCase="1">
+    <!---<div *ngFor="let question of this.quesForSec[i] " [ngSwitch]="question.Type">
+      <form *ngSwitchCase="1">-->
         <!---<app-checkbox  (isTrueEmit)='DoThisWhenInput($event)'  [question]="question.Question"></app-checkbox>-->
-        <app-toggle-button (changedEmit)='DoThisWhenInput($event)' [question]="question.Question"></app-toggle-button>
-      </form>
-      <form *ngSwitchCase="2">
-        <app-short-text (textEmiter)='DoThisWhenInput($event)' [question]="question.Question"></app-short-text>
-      </form>
-      <form *ngSwitchCase="3">
-        <app-dropbox (selectEmiter)='DoThisWhenInput($event)' [listOfOptions]="question.Options" [question]="question.Question"></app-dropbox>
-      </form>
-      <form *ngSwitchCase="4">
-        <app-long-text (textEmiter)='DoThisWhenInput($event)' [question]="question.Question"></app-long-text>
-      </form>
-    </div>
+    <!---<app-toggle-button (changedEmit)='DoThisWhenInput($event)' [question]="question.Question"></app-toggle-button>
+  </form>
+  <form *ngSwitchCase="2">
+    <app-short-text (textEmiter)='DoThisWhenInput($event)' [question]="question.Question"></app-short-text>
+  </form>
+  <form *ngSwitchCase="3">
+    <app-dropbox (selectEmiter)='DoThisWhenInput($event)' [listOfOptions]="question.Options" [question]="question.Question"></app-dropbox>
+  </form>
+  <form *ngSwitchCase="4">
+    <app-long-text (textEmiter)='DoThisWhenInput($event)' [question]="question.Question"></app-long-text>
+  </form>
+</div>-->
+    <app-qs-list (qsAndAnswersFromSectionEmit)='DoThisWhenInput($event, i)' [questions]="this.quesForSec[i]" [count]=0 ></app-qs-list>
   </div>
-<button class="summary-button" mat-raised-button color="primary" type="submit" (click)="showSummary()" matTooltip="הצג סיכום"
-        matTooltipPosition="before">הצג סיכום</button>
-  <button class="summary-button" mat-raised-button color="primary" type="submit"  matTooltip="צור מרשם"
-          matTooltipPosition="before">צור מרשם</button>
-  <button (click)="backPage()" mat-icon-button class="summary-button" mat-raised-button color="primary" type="submit" matTooltip="חזור לעמוד הקודם"
-          matTooltipPosition="before"> <i class="material-icons">
-    navigate_before
-  </i> </button>
+
+
 
 
 

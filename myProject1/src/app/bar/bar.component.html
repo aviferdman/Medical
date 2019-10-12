@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+
+  <button (click)="showIdentity()" mat-icon-button class="summary-button" mat-raised-button color="primary" type="submit" matTooltip="הצג פרטי מטופל"
+          matTooltipPosition="below"> <i class="material-icons">
+    perm_identity
+  </i> </button>
+  <app-buttons-together [patient] = this.patient [finalSummary]="allQuestionsAndAnswers"></app-buttons-together>
+</mat-toolbar>

@@ -2,3 +2,6 @@
   width: 30%;
   direction: rtl;
 }
+:hover{
+  padding: 1%;
+}

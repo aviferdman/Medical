@@ -12,6 +12,10 @@
   font-weight: initial;
   height: 100px;
 }
+:hover{
+  background: salmon;
+  padding: 8%;
+}
 .tab{
   margin-bottom: 12%;
   float: bottom;
@@ -19,7 +23,6 @@
   height: 5%;
   direction: rtl;
   outline: black;
-
 }
 .float-down {
   float: bottom;

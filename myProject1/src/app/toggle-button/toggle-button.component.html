@@ -1,4 +1,4 @@
-<form>
+<form [ngStyle]="{marginRight: ' '+this.tabs*400+'%'}">
   <h4 class="spacing">
     {{question}}
   </h4>
@@ -9,3 +9,7 @@
     <div class="toggle-button-text-off">לא</div>
   </div>
 </form>
+<app-qs-list class="diagnosis" (qsAndAnswersFromSectionEmit)="Merge($event)" [questions]="relatedQS" [count]="this.tabs+1" [ngStyle]="{display: this.display}"></app-qs-list>
+<p>{{this.listOfQAA | json}}</p>
+<p>{{this.qAndA | json}}</p>
+<p>{{this.tabs | json}}</p>

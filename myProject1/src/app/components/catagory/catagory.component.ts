@@ -25,4 +25,11 @@ export class CatagoryComponent implements OnInit {
   backPage() {
     this.router.navigate(['/home']);
   }
+  showIdentity() {
+    Swal.fire({
+      title: 'Patient information:',
+      html: `<p> ID: ${this.patient.ID} First Name: ${this.patient.firstName} Last Name: ${this.patient.lastName} Age: ${this.patient.age} </p>`,
+      showConfirmButton: true,
+    });
+  }
 }

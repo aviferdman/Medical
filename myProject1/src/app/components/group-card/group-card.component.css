@@ -1,7 +1,10 @@
 :host {
   display: block;
 }
-
+:hover{
+  width: 115%;
+  height: 115%;
+}
 :host.is-first {
   border-top: 2px solid grey;
   padding-top: 20px;

@@ -1,6 +1,9 @@
 
 <mat-toolbar color="primary">
-  ID: {{this.patient.ID}} First Name: {{this.patient.firstName}} Last Name: {{this.patient.lastName}} Age: {{this.patient.age}}
+  <button (click)="showIdentity()" mat-icon-button class="summary-button" mat-raised-button color="primary" type="submit" matTooltip="הצג פרטי מטופל"
+          matTooltipPosition="below"> <i class="material-icons">
+    perm_identity
+  </i> </button>
 </mat-toolbar>
   <div class="tab">
     <app-group-card class="col" *ngFor="let group of groups" [groupInput]="group" [patient]="this.patient">  </app-group-card>

@@ -30,6 +30,11 @@ import {
 } from '@angular/material';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
+import { BarComponent } from './bar/bar.component';
+import { ButtonsTogetherComponent } from './buttons-together/buttons-together.component';
+import { QsListComponent } from './qs-list/qs-list.component';
+import { YesNoRadioComponent } from './yes-no-radio/yes-no-radio.component';
+import { YesNoComponent } from './yes-no/yes-no.component';
 
 
 @NgModule({
@@ -47,6 +52,11 @@ import { ToggleButtonComponent } from './toggle-button/toggle-button.component';
     LongTextComponent,
     DiagnosisFormComponent,
     ToggleButtonComponent,
+    BarComponent,
+    ButtonsTogetherComponent,
+    QsListComponent,
+    YesNoRadioComponent,
+    YesNoComponent,
   ],
   imports: [
     BrowserModule,

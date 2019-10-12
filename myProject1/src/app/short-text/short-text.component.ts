@@ -9,6 +9,8 @@ import {QuestionAndAnswer} from '../service1.service';
 export class ShortTextComponent implements OnInit {
   @Input()
   question: string;
+  @Input()
+  tabs: number;
 
   @Output()
   textEmiter: EventEmitter <QuestionAndAnswer> = new EventEmitter();
