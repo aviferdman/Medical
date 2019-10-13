@@ -1,16 +1,14 @@
 
-<mat-toolbar color="primary">
+<mat-toolbar class="bar">
   <button (click)="showIdentity()" mat-icon-button class="summary-button" mat-raised-button color="primary" type="submit" matTooltip="הצג פרטי מטופל"
           matTooltipPosition="below"> <i class="material-icons">
     perm_identity
+  </i> </button>
+  <button (click)="backPage()" mat-icon-button class="summary-button" mat-raised-button color="primary" type="submit" matTooltip="חזור לעמוד הקודם"
+          matTooltipPosition="before"> <i class="material-icons">
+    navigate_before
   </i> </button>
 </mat-toolbar>
   <div class="tab">
     <app-group-card class="col" *ngFor="let group of groups" [groupInput]="group" [patient]="this.patient">  </app-group-card>
   </div>
-<button (click)="backPage()" mat-icon-button class="summary-button" mat-raised-button color="primary" type="submit" matTooltip="חזור לעמוד הקודם"
-        matTooltipPosition="before"> <i class="material-icons">
-  navigate_before
-</i> </button>
-
-

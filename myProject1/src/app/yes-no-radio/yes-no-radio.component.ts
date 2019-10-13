@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {QuestionAndAnswer} from '../service1.service';
+import {getQuestionByQuestion, getRelatedQuestionsByQuestion} from '../../Questions';
 
 @Component({
   selector: 'app-yes-no-radio',
@@ -14,6 +15,8 @@ export class YesNoRadioComponent implements OnInit {
   tabs: number;
   @Output()
   changedEmitter = new EventEmitter<QuestionAndAnswer>();
+  @Output()
+  RelatedEmitter = new EventEmitter<[]>();
   qAndA: QuestionAndAnswer;
 
   constructor() { }
@@ -25,10 +28,12 @@ export class YesNoRadioComponent implements OnInit {
   ChangedYes() {
     this.qAndA.answer = 'כן';
     this.changedEmitter.emit(this.qAndA);
+    this.RelatedEmitter.emit(getQuestionByQuestion(this.question).Related_QS);
   }
 
   ChangedNo() {
     this.qAndA.answer = 'ללא';
     this.changedEmitter.emit(this.qAndA);
+    this.RelatedEmitter.emit(getQuestionByQuestion(this.question).Related_QS);
   }
 }

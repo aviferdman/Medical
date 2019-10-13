@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {QuestionAndAnswer} from '../service1.service';
+import {getQuestionByQuestion} from '../../Questions';
 
 @Component({
   selector: 'app-long-text',
@@ -15,11 +16,13 @@ export class LongTextComponent implements OnInit {
   textEmiter: EventEmitter <QuestionAndAnswer> = new EventEmitter();
   text: string;
   qAndA: QuestionAndAnswer;
+  isHidden: boolean;
 
   constructor() { }
 
   ngOnInit() {
     this.qAndA = new QuestionAndAnswer(this.question, '');
+    this.isHidden = (getQuestionByQuestion(this.question)).Is_Related === 'true';
   }
 
   enteredText(input: any) {

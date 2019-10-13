@@ -1,5 +1,6 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {QuestionAndAnswer} from '../service1.service';
+import {getQuestionByQuestion} from '../../Questions';
 
 @Component({
   selector: 'app-short-text',
@@ -16,11 +17,13 @@ export class ShortTextComponent implements OnInit {
   textEmiter: EventEmitter <QuestionAndAnswer> = new EventEmitter();
   keyUp: string;
   qAndA: QuestionAndAnswer;
+  isHidden: boolean;
 
   constructor() { }
 
   ngOnInit() {
     this.qAndA = new QuestionAndAnswer(this.question, '');
+    this.isHidden = (getQuestionByQuestion(this.question)).Is_Related === 'true';
   }
 
   enteredText(input: any) {

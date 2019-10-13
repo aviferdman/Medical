@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {getRelatedQuestionsByQuestion} from '../Questions';
 
 @Injectable({
   providedIn: 'root'
@@ -38,4 +39,8 @@ export class Service1Service {
   patient: Patient;
   constructor() {
   }
+}
+
+export function updateRelatedPosition(question: string) {
+
 }

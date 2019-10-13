@@ -2,6 +2,7 @@
 export const QUESTIONS: any = [
   {
     ID: 1,
+    Is_Related: 'false',
     Related_QS: [],
     Tabs_Count: 0,
     Diagnosis: 'כאב גרון',
@@ -11,6 +12,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 2,
+    Is_Related: 'false',
     Related_QS: [24, 25],
     Tabs_Count: 0,
     Diagnosis: 'כאב גרון',
@@ -20,6 +22,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 24,
+    Is_Related: 'true',
     Related_QS: [],
     Tabs_Count: 1,
     Diagnosis: 'כאב גרון',
@@ -29,6 +32,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 25,
+    Is_Related: 'true',
     Related_QS: [],
     Tabs_Count: 1,
     Diagnosis: 'כאב גרון',
@@ -38,6 +42,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 3,
+    Is_Related: 'false',
     Related_QS: [],
     Tabs_Count: 0,
     Diagnosis: 'כאב גרון',
@@ -47,6 +52,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 4,
+    Is_Related: 'false',
     Related_QS: [],
     Tabs_Count: 0,
     Diagnosis: 'כאב גרון',
@@ -56,6 +62,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 5,
+    Is_Related: 'false',
     Related_QS: [],
     Tabs_Count: 0,
     Diagnosis: 'כאב גרון',
@@ -65,6 +72,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 6,
+    Is_Related: 'false',
     Related_QS: [],
     Tabs_Count: 0,
     Diagnosis: 'כאב גרון',
@@ -74,6 +82,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 7,
+    Is_Related: 'false',
     Related_QS: [],
     Tabs_Count: 0,
     Diagnosis: 'כאב גרון',
@@ -83,6 +92,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 8,
+    Is_Related: 'false',
     Related_QS: [],
     Tabs_Count: 0,
     Diagnosis: 'כאב גרון',
@@ -92,6 +102,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 9,
+    Is_Related: 'false',
     Related_QS: [],
     Tabs_Count: 0,
     Diagnosis: 'כאב גרון',
@@ -101,6 +112,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 10,
+    Is_Related: 'false',
     Related_QS: [],
     Tabs_Count: 0,
     Diagnosis: 'כאב גרון',
@@ -110,6 +122,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 11,
+    Is_Related: 'false',
     Related_QS: [],
     Tabs_Count: 0,
     Diagnosis: 'כאב גרון',
@@ -119,6 +132,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 12,
+    Is_Related: 'false',
     Related_QS: [],
     Tabs_Count: 0,
     Diagnosis: 'כאב גרון',
@@ -128,6 +142,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 13,
+    Is_Related: 'false',
     Related_QS: [],
     Tabs_Count: 0,
     Diagnosis: 'כאב גרון',
@@ -137,6 +152,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 14,
+    Is_Related: 'false',
     Related_QS: [],
     Tabs_Count: 0,
     Diagnosis: 'כאב גרון',
@@ -146,6 +162,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 15,
+    Is_Related: 'false',
     Related_QS: [],
     Tabs_Count: 0,
     Diagnosis: 'כאב גרון',
@@ -155,6 +172,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 16,
+    Is_Related: 'false',
     Related_QS: [],
     Tabs_Count: 0,
     Diagnosis: 'כאב גרון',
@@ -164,6 +182,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 17,
+    Is_Related: 'false',
     Related_QS: [],
     Tabs_Count: 0,
     Diagnosis: 'כאב גרון',
@@ -173,6 +192,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 18,
+    Is_Related: 'false',
     Related_QS: [],
     Tabs_Count: 0,
     Diagnosis: 'כאב גרון',
@@ -183,6 +203,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 19,
+    Is_Related: 'false',
     Related_QS: [],
     Tabs_Count: 0,
     Diagnosis: 'כאב גרון',
@@ -192,6 +213,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 20,
+    Is_Related: 'false',
     Related_QS: [],
     Tabs_Count: 0,
     Diagnosis: 'כאב גרון',
@@ -201,6 +223,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 21,
+    Is_Related: 'false',
     Related_QS: [],
     Tabs_Count: 0,
     Diagnosis: 'כאב גרון',
@@ -210,6 +233,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 22,
+    Is_Related: 'false',
     Related_QS: [],
     Tabs_Count: 0,
     Diagnosis: 'כאב גרון',
@@ -219,6 +243,7 @@ export const QUESTIONS: any = [
   },
   {
     ID: 23,
+    Is_Related: 'false',
     Related_QS: [],
     Tabs_Count: 0,
     Diagnosis: 'כאב גרון',
@@ -253,3 +278,37 @@ export function findQuesForSec(diagnosis: string, section: string) {
   return questions;
 }
 
+export function getRelatedQuestionsByQuestion(question: string) {
+  let q;
+  for (const ques of QUESTIONS) {
+    if (ques.Question === question) {
+      q = ques;
+    }
+  }
+  let listRelated;
+  listRelated = [];
+  q.Related_QS.map(n => {
+    for (const ques of QUESTIONS) {
+      if (ques.ID === n) {
+        listRelated.push(ques.Question);
+      }
+    }
+  });
+  return listRelated;
+}
+export function getQuestionByQuestion(question: string) {
+  let q;
+  for (const ques of QUESTIONS) {
+    if (ques.Question === question) {
+      q = ques;
+    }
+  }
+  return q;
+}
+export function getQuestionByID(id: number) {
+  for (const ques of QUESTIONS) {
+    if (ques.ID === id) {
+      return ques;
+    }
+  }
+}

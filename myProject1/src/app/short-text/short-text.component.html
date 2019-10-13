@@ -1,4 +1,4 @@
 
-<mat-form-field>
+<mat-form-field [id]="question" [hidden]="isHidden">
   <input matInput (keyup)="enteredText($event)" placeholder={{this.question}}>
 </mat-form-field>

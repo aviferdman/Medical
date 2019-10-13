@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {QuestionAndAnswer} from '../service1.service';
+import {getQuestionByID, getQuestionByQuestion} from '../../Questions';
 
 @Component({
   selector: 'app-qs-list',
@@ -32,5 +33,11 @@ export class QsListComponent implements OnInit {
       qAndA.answer = input.answer; }
     });
     this.qsAndAnswersFromSectionEmit.emit(this.allQuestionsAndAnswers);
+  }
+
+  updateHidden(listOfRelated: []) {
+    listOfRelated.map(n => {
+      document.getElementById(getQuestionByID(n).Question).hidden = !document.getElementById(getQuestionByID(n).Question).hidden;
+    });
   }
 }

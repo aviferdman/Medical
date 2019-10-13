@@ -13,8 +13,9 @@
   height: 100px;
 }
 :hover{
-  background: salmon;
+  background: rgba(250, 255, 221, 0.5);
   padding: 8%;
+  color: salmon;
 }
 .tab{
   margin-bottom: 12%;

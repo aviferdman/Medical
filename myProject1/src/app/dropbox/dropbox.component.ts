@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {QuestionAndAnswer} from '../service1.service';
 import {FormControl} from '@angular/forms';
+import {getQuestionByQuestion} from '../../Questions';
 
 @Component({
   selector: 'app-dropbox',
@@ -16,6 +17,7 @@ export class DropboxComponent implements OnInit {
   tabs: number;
   @Output()
   selectEmiter: EventEmitter <QuestionAndAnswer> = new EventEmitter();
+  isHidden: boolean;
 
   qAndA: QuestionAndAnswer;
   selectOption = '';
@@ -24,6 +26,7 @@ export class DropboxComponent implements OnInit {
 
   ngOnInit() {
     this.qAndA = new QuestionAndAnswer(this.question, '');
+    this.isHidden = (getQuestionByQuestion(this.question)).Is_Related === 'true';
   }
 
   clickOnOption() {

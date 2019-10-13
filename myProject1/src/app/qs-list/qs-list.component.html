@@ -1,22 +1,17 @@
 
-<div *ngFor="let question of this.questions " [ngSwitch]="question.Type" [ngStyle]="{'margin-right':''+question.Tabs_Count*7+'%'}">
-  <div>
-    <h4 class="spacing" *ngIf="question.Type === 1">
-      {{question.Question}}
-    </h4>
-  </div>
+<div *ngFor="let question of this.questions" [ngSwitch]="question.Type" [ngStyle]="{'margin-right':''+question.Tabs_Count*7+'%'}">
       <form *ngSwitchCase="1">
 <!---<app-checkbox  (isTrueEmit)='DoThisWhenInput($event)'  [question]="question.Question"></app-checkbox>-->
 <!---<app-toggle-button (changedEmit)='DoThisWhenInput($event)' [question]="question.Question" [tabs]="this.count"></app-toggle-button>-->
-        <app-yes-no (changedEmit)='DoThisWhenInput($event)' [question]="question.Question" [tabs]="this.count"></app-yes-no>
-</form>
-<form *ngSwitchCase="2">
-<app-short-text (textEmiter)='DoThisWhenInput($event)' [question]="question.Question" [tabs]="this.count"></app-short-text>
-</form>
-<form *ngSwitchCase="3">
-<app-dropbox (selectEmiter)='DoThisWhenInput($event)' [listOfOptions]="question.Options" [question]="question.Question" [tabs]="this.count"></app-dropbox>
-</form>
-<form *ngSwitchCase="4">
-<app-long-text (textEmiter)='DoThisWhenInput($event)' [question]="question.Question" [tabs]="this.count"></app-long-text>
-</form>
+        <app-yes-no (relatedEmitter2)="updateHidden($event)" (changedEmit)='DoThisWhenInput($event)' [question]="question.Question" [tabs]="this.count"></app-yes-no>
+      </form>
+  <form *ngSwitchCase="2">
+    <app-short-text (textEmiter)='DoThisWhenInput($event)' [question]="question.Question" [tabs]="this.count"></app-short-text>
+  </form>
+  <form *ngSwitchCase="3">
+    <app-dropbox (selectEmiter)='DoThisWhenInput($event)' [listOfOptions]="question.Options" [question]="question.Question" [tabs]="this.count"></app-dropbox>
+  </form>
+  <form *ngSwitchCase="4">
+    <app-long-text (textEmiter)='DoThisWhenInput($event)' [question]="question.Question" [tabs]="this.count"></app-long-text>
+  </form>
 </div>

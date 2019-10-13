@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Patient, QuestionAndAnswer} from '../../service1.service';
+import {Patient, QuestionAndAnswer, updateRelatedPosition} from '../../service1.service';
 import {any} from 'codelyzer/util/function';
-import {findQuesForSec, findSections, QUESTIONS} from '../../../Questions';
+import {findQuesForSec, findSections, getQuestionByQuestion, getRelatedQuestionsByQuestion, QUESTIONS} from '../../../Questions';
 import Swal from 'sweetalert2';
 import {Router} from '@angular/router';
 
@@ -16,7 +16,7 @@ export class DiagnosisComponent implements OnInit {
 
   sections = [];
   quesForSec = [];
-  allQuestionsAndAnswers = [[]];
+  allQuestionsAndAnswers = [];
 
 
   constructor(private router: Router) {
@@ -28,18 +28,12 @@ export class DiagnosisComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.sections = findSections(this.diagnosis);
     try {
       this.sections.map(sec => this.quesForSec.push(findQuesForSec(this.diagnosis, sec)));
     } catch (e) {
       console.log('couldnt load quesForSec' + e.toString());
-    }/*
-    try {
-      this.quesForSec.map(sec => sec.map(q => this.allQuestionsAndAnswers.push(new QuestionAndAnswer(q.Question, ''))));
-    } catch (e) {
-      console.log('couldnt load all questions' + e.toString());
-    }*/
+    }
     this.allQuestionsAndAnswers = new Array(this.sections.length);
   }
 }

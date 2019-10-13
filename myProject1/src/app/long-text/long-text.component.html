@@ -1,4 +1,4 @@
 
-<mat-form-field class="long-text">
+<mat-form-field class="long-text" [id]="question" [hidden]="isHidden">
   <textarea type="text" matInput (keyup)="enteredText($event)" [(ngModel)]="text" [ngModelOptions]="{standalone: true}" placeholder={{this.question}}></textarea>
 </mat-form-field>

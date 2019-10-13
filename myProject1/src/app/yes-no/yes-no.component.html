@@ -1,2 +1,8 @@
-
-<app-yes-no-radio [question]="question" [tabs]="tabs" (changedEmitter)="Do($event)"></app-yes-no-radio>
+<div [id]="question" [hidden]="isHidden">
+<div [id]="''+this.question+'0'">
+  <h4 class="spacing">
+    {{question}}
+  </h4>
+</div>
+<app-yes-no-radio  [id]="''+this.question+'1'"  [question]="question" [tabs]="tabs" (RelatedEmitter)="DoWithRelatedArray($event)" (changedEmitter)="Do($event)"></app-yes-no-radio>
+</div>

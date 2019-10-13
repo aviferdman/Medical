@@ -1,4 +1,4 @@
-<mat-form-field>
+<mat-form-field  [id]="question" [hidden]="isHidden">
   <mat-label>{{this.question}}</mat-label>
   <mat-select [(ngModel)]="selectOption" (selectionChange)="clickOnOption()">
     <mat-option *ngFor="let o of listOfOptions" [value]="o" >
